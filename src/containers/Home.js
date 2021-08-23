@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Form from "../components/Form";
+import Box from "../components/Box"
+
+
 const Home = () => {
+  const data = [
+    {
+      id: 1,
+      title: 'Platzi store',
+      description: 'Este proyecto fue parte de la carrera de python en platzi'
+    },
+    {
+      id:2,
+      title: 'Platzi store',
+      description: 'Este proyecto fue parte de la carrera de python en platzi'
+    },
+    {
+      id: 3,
+      title: 'Platzi store',
+      description: 'Este proyecto fue parte de la carrera de python en platzi'
+    }
+
+  ]
+
+  const [projects, setList] = useState([]);
+
+  useEffect(() => {
+    setList(data)
+  },[])
+
   return (
     <>
       <section className="hero container">
@@ -15,9 +43,16 @@ const Home = () => {
           </p>
         </div>
       </section>
-    <div className="form-container">
-        <Form/>
-    </div>
+      <div className="box-container">
+        {projects.map(item => (
+          <Box key={item.id} {...item} />
+        ))}
+      </div>
+      <div className="form-container">
+
+        <Form />
+
+      </div>
     </>
   );
 }
