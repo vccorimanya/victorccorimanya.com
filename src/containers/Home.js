@@ -1,32 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Form from "../components/Form";
 import Box from "../components/Box"
-
+import projectsData from '../static-data/projects'
 
 const Home = () => {
-  const data = [
-    {
-      id: 1,
-      title: 'Platzi store',
-      description: 'Este proyecto fue parte de la carrera de python en platzi'
-    },
-    {
-      id:2,
-      title: 'Platzi store',
-      description: 'Este proyecto fue parte de la carrera de python en platzi'
-    },
-    {
-      id: 3,
-      title: 'Platzi store',
-      description: 'Este proyecto fue parte de la carrera de python en platzi'
-    }
-
-  ]
 
   const [projects, setList] = useState([]);
 
   useEffect(() => {
-    setList(data)
+    setList(projectsData)
   },[])
 
   return (
@@ -43,12 +25,18 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <div className="box-container">
+      <section >
+        <div className="container">
+          <h2 className="line">Projects</h2>
+        </div>
+      <div className="box-container ">
         {projects.map(item => (
-          <Box key={item.id} {...item} />
+          <Box key={item.id} {...item}/>
         ))}
       </div>
-      <div className="form-container">
+
+      </section>
+      <div className="form-container ">
 
         <Form />
 

@@ -6,14 +6,13 @@ function Header() {
     <header className="header">
       <nav className="container flex flex-ai-c">
         <div className="header__logo">
+          <Link to="/">
           <h3 className="">VCC</h3>
+          </Link>
         </div>
         <ul className="flex l-style m-0">
           <li className="ml">
             <Link to="/">Home</Link>
-          </li>
-          <li className="ml">
-            <Link to="/projects">Projecs</Link>
           </li>
           <li className="ml">
             <Link to="/blog">Blog</Link>
