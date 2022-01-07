@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Form from "../components/Form";
-import Box from "../components/Box"
+import Box from "../components/Box";
 import projectsData from '../static-data/projects'
 
 const Home = () => {
@@ -12,36 +11,29 @@ const Home = () => {
   },[])
 
   return (
-    <>
+    <div className="wrapper">
       <section className="hero container">
-        <div className="hero__image">
-        </div>
         <div className="hero_text">
           <h1 className="m-0 f-title">
-            Welcome to my website i'm <span>Victor Ccorimanya</span>
+            Bienvenido a mi espacio soy  <span>Victor Ccorimanya</span>
           </h1>
           <p className="m-0 f-p">
-            software <span>Developper</span>
+            desarrollador <span>Frontend</span>
           </p>
         </div>
       </section>
       <section >
         <div className="container">
-          <h2 className="line">Projects</h2>
+          <h2 className="line">Proyectos</h2>
         </div>
-      <div className="box-container ">
+        <div className="flex-wrap">
         {projects.map(item => (
           <Box key={item.id} {...item}/>
         ))}
       </div>
 
       </section>
-      <div className="form-container ">
-
-        <Form />
-
-      </div>
-    </>
+    </div>
   );
 }
 
